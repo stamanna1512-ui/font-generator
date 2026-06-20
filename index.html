@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Love Font Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Love Font Generator</h1>
+
+    <input type="text" id="textInput" placeholder="Type your nickname...">
+
+    <div id="preview">Preview Text</div>
+
+    <button onclick="copyText()">Copy Text</button>
+</div>
+
+<script>
+const input = document.getElementById("textInput");
+const preview = document.getElementById("preview");
+
+input.addEventListener("input", function(){
+    preview.textContent = this.value || "Preview Text";
+});
+
+function copyText(){
+    navigator.clipboard.writeText(preview.textContent);
+    alert("Copied!");
+}
+</script>
+
+</body>
+</html>
